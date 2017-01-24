@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.1.16)  24 JAN 2017 13:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.1.16)  24 JAN 2017 14:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -667,6 +667,33 @@ Overfull \hbox (12.93759pt too wide) in paragraph at lines 6--7
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
+) (./BadStack.java
+Package babel Info: Redefining swedish shorthand "|
+(babel)             in language  on input line 1.
+Package babel Info: Redefining swedish shorthand "~
+(babel)             in language  on input line 1.
+Package babel Info: Redefining swedish shorthand "|
+(babel)             in language  on input line 1.
+Package babel Info: Redefining swedish shorthand "~
+(babel)             in language  on input line 1.
+ [2]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 6.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 6.
+
+Overfull \hbox (90.91914pt too wide) in paragraph at lines 6--8
+[][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (60.92624pt too wide) in paragraph at lines 8--9
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
 )
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 56.
 Package babel Info: Redefining swedish shorthand "|
@@ -677,7 +704,7 @@ Package babel Info: Redefining swedish shorthand "|
 (babel)             in language  on input line 56.
 Package babel Info: Redefining swedish shorthand "~
 (babel)             in language  on input line 56.
- [2]
+ [3]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 56.
  (./FelixAnnikaTema2.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 56.
@@ -687,10 +714,10 @@ Package rerunfilecheck Info: File `FelixAnnikaTema2.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 56.
  ) 
 Here is how much of TeX's memory you used:
- 7888 strings out of 493014
- 110647 string characters out of 6133351
- 210597 words of memory out of 5000000
- 11300 multiletter control sequences out of 15000+600000
+ 7931 strings out of 493014
+ 111291 string characters out of 6133351
+ 211597 words of memory out of 5000000
+ 11319 multiletter control sequences out of 15000+600000
  11303 words of font info for 30 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  36i,7n,40p,245b,1842s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -702,10 +729,10 @@ sr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr
 ocal/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/loc
 al/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/local
 /texlive/2016/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on FelixAnnikaTema2.pdf (2 pages, 110068 bytes).
+Output written on FelixAnnikaTema2.pdf (3 pages, 113929 bytes).
 PDF statistics:
- 96 PDF objects out of 1000 (max. 8388607)
- 84 compressed objects within 1 object stream
- 42 named destinations out of 1000 (max. 500000)
+ 121 PDF objects out of 1000 (max. 8388607)
+ 107 compressed objects within 2 object streams
+ 60 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
