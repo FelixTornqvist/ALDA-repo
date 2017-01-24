@@ -1,8 +1,8 @@
     int[] stack = new int[100];
-    int pointer;
+    int cursor;
 
     public void push(int element) {
-        if (stack[stack.length-1] != 0) {
+        if (stack.length == cursor) {
             int[] newStack = new int[(stack.length * 2)];
 
             for (int i = 0; i < stack.length; i++) {
@@ -10,6 +10,6 @@
             }
             stack = newStack;
         }
-        stack[pointer] = element;
-        pointer++;
+        stack[cursor] = element;
+        cursor++;
     }
