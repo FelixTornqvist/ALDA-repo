@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.1.16)  24 JAN 2017 12:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.1.16)  24 JAN 2017 13:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -623,38 +623,77 @@ File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 (./codeExample1.java
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 6.
+(Font)              <7> on input line 5.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 6.
+(Font)              <5> on input line 5.
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 52.
+Overfull \hbox (0.32755pt too wide) in paragraph at lines 42--43
+[]\T1/cmr/m/n/10 Hur ef-fek-tiv är den här sor-te-rings-al-go-rit-men? Be-räk-n
+a dess
+ []
+
+(./Sort1.java
+Overfull \hbox (30.93333pt too wide) in paragraph at lines 18--19
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (48.92908pt too wide) in paragraph at lines 19--21
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
 Package babel Info: Redefining swedish shorthand "|
-(babel)             in language  on input line 52.
+(babel)             in language  on input line 21.
 Package babel Info: Redefining swedish shorthand "~
-(babel)             in language  on input line 52.
+(babel)             in language  on input line 21.
 Package babel Info: Redefining swedish shorthand "|
-(babel)             in language  on input line 52.
+(babel)             in language  on input line 21.
 Package babel Info: Redefining swedish shorthand "~
-(babel)             in language  on input line 52.
- [1
+(babel)             in language  on input line 21.
+[1
 
 {/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 52.
+Overfull \hbox (0.94043pt too wide) in paragraph at lines 21--22
+[][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+) (./Linear1.java
+Overfull \hbox (36.93192pt too wide) in paragraph at lines 1--2
+[][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (12.93759pt too wide) in paragraph at lines 6--7
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 56.
+Package babel Info: Redefining swedish shorthand "|
+(babel)             in language  on input line 56.
+Package babel Info: Redefining swedish shorthand "~
+(babel)             in language  on input line 56.
+Package babel Info: Redefining swedish shorthand "|
+(babel)             in language  on input line 56.
+Package babel Info: Redefining swedish shorthand "~
+(babel)             in language  on input line 56.
+ [2]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 56.
  (./FelixAnnikaTema2.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 52.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 52.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 56.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 56.
 Package rerunfilecheck Info: File `FelixAnnikaTema2.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 52.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 56.
  ) 
 Here is how much of TeX's memory you used:
- 7847 strings out of 493014
- 110157 string characters out of 6133351
- 200597 words of memory out of 5000000
- 11295 multiletter control sequences out of 15000+600000
+ 7888 strings out of 493014
+ 110647 string characters out of 6133351
+ 210597 words of memory out of 5000000
+ 11300 multiletter control sequences out of 15000+600000
  11303 words of font info for 30 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 30i,7n,40p,245b,1170s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,7n,40p,245b,1842s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><
 /usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></u
@@ -663,10 +702,10 @@ sr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr
 ocal/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/loc
 al/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/local
 /texlive/2016/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on FelixAnnikaTema2.pdf (1 page, 103481 bytes).
+Output written on FelixAnnikaTema2.pdf (2 pages, 110068 bytes).
 PDF statistics:
- 56 PDF objects out of 1000 (max. 8388607)
- 45 compressed objects within 1 object stream
- 12 named destinations out of 1000 (max. 500000)
+ 96 PDF objects out of 1000 (max. 8388607)
+ 84 compressed objects within 1 object stream
+ 42 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
