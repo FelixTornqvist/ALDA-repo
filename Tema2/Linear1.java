@@ -1,4 +1,4 @@
-public boolean equalTo(String a[], String b[]) {
+public boolean equalTo(String[] a, String[] b) {
         if (a.length != b.length) {
             return false;
         }
