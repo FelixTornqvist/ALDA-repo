@@ -13,3 +13,8 @@
         stack[cursor] = element;
         cursor++;
     }
+
+String str = "";
+for (int i = 0; i < n; i++) {
+  str+="*";
+}
