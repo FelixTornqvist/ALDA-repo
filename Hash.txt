@@ -1,16 +1,4 @@
 
-Sökning i en array har komplexiteten O(1), insättning eller borttag tar O(n) om det är i början eller O(1) i slutet. (?)
-Ska ett element sättas in på ett index som inte är det första lediga så behöver elementen skjutas ett steg framåt. I värsta fall kan komplexiteten bli O(n). Vet du inte i förväg ungefär hur stor mängd data du vill lagra så är inte en arraybaserad hashtabell särskillt effektiv. När arrayen behöver expanderas sker det genom att skapa en ny, större, array som elementen i den första arrayen kompieras till med tidskomplexiteten O(n). Sortering av en array har även den tidskomplexiteten O(n).
-Om du på förhand vet ungefär hur mycket du behöver lagra, och om du inte är i behov av sortering av datan så är en arraybaserad hashtabell det ultimata när det kommer till hastighet. 
-
-Men är sortering viktig och 
-
-
-
-
-
-
-
 Hashfunktion
 En hashtabell består av nycklar och nycklarnas värde. Om hashtabellen är arraybaserad är värdet elementet och nyckeln elementets index. 
  ....
@@ -45,4 +33,12 @@ Man låter x genomgå en ny hashning, och låter resultatet bli storleken på in
 
 
 Separate chaining ... linked-list med kolliderande element.
+
+
+
+
+(Sökning i en array har komplexiteten O(1), insättning eller borttag tar O(n) om det är i början eller O(1) i slutet. (?)
+Ska ett element sättas in på ett index som inte är det första lediga så behöver elementen skjutas ett steg framåt. I värsta fall kan komplexiteten bli O(n). Vet du inte i förväg ungefär hur stor mängd data du vill lagra så är inte en arraybaserad hashtabell särskillt effektiv. När arrayen behöver expanderas sker det genom att skapa en ny, större, array som elementen i den första arrayen kompieras till med tidskomplexiteten O(n). Sortering av en array har även den tidskomplexiteten O(n).
+Om du på förhand vet ungefär hur mycket du behöver lagra, och om du inte är i behov av sortering av datan så är en arraybaserad hashtabell det ultimata när det kommer till hastighet. )
+Men är sortering viktig och 
 
