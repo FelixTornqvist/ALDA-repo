@@ -32,19 +32,26 @@
 \section*{Hashfunktion}
 
 
+En hashtabell är den mest effektiva datastrukturen när det gäller sökning. I en hashtabell finns en  \emph{nyckel} och ett  \emph{värde}. Med rätt nyckel kommer man åt rätt värde. Som ett exempel kan vi ta en samling objekt av personer från en klass Person, där varje person har ett unikt personnummer, telefonnummer och adress.
+Man kan med fördel lägga in personerna i en hashtabell och använda de unika personnumrerna som nycklar och objekten som värden. Genom att söka på ett visst personnummer i hashtabellen returneras då personen med just det personnumret. Det ger en komplexitet på O(1) för insättning och uttag.
 
+Hashmapen är egentligen bara en vanlig array, som personobjekten ligger i. Personnummer blir väldigt stora tal, så att lägga in personen Annika på array[8701267869] är en väldigt dålig idé. Arrayen blir för stor och bör(?)/är praktiskt taget omöjlig att skapa.
 
-En hashtabell består av nycklar och nycklarnas värde. Om hashtabellen är arraybaserad är värdet elementet och nyckeln elementets index. 
- ....
-En hashfunktion konverterar ett värde till ett index i arrayen.
+Det vi istället behöver göra är att ha en smart metod som kan transformera personnumret till ett realistiskt index i arrayen. Ett annat ord för det är hashning, och det är vad en hashfunktion gör.
+Nu kan arrayen få en storlek som är anpassad till antalet uppskattade objekt som den ska hålla.
 
-\subsection*{Exempel:}
+Ett enkelt sätt att implementera en hashfunktion är att göra en restdivision på personnumret och arrayens storlek. Den rest vi får fram kan då bli det index objektet ska läggas in på.
+Det vanliga är att man implementerar hashfunktionen i klassen för objekten och inte i hashmapen. Annat vore dumt, en hashmap ska vara generisk.
+
+Men det finns problem med att hashfunktionen i det här fallet är så simpel att  \texttt{index = personnr \%  arrayLength }. Många av personnumrerna kommer tilldelas samma index och på så sätt kollidera med varandra. Det går att få en bättre spridning genom att göra uträkningen mer komplicerad. Ett vanligt sätt är att multiplicera in primtal i nyckeln(personnumret i vårt fall). 
+
+\texttt{Exempel...}
 
 
 \section*{Kollisionshantering}
- ...
+Nu har spridningen blivit betydligt bättre, men det verkar vara svårt att undvika kollisioner helt. Men det finns ett antal sätt att hantera dem.
 
-Det finns olika modeller för att lösa problemet med kollisioner vid insättning.
+\subsection*{Rubrik?}
 Ett sätt är att inkrementera index tills en ledig plats hittats.
 Om fyra nycklar mappar över samma index x blir placeringen av dessa $x, x+1, x+2$ och $x+4$. Det första av de fyra som sätts in sätts in på $x$, nr två sätts in på indexet efter $x$ o.s.v. 
 Söker man nyckeln som ligger på $x + 4$ så börjar man kolla på x, följt av $x + 1, x + 2$ och $x+3$. Nyckel fyra finns på $x + 3$ och kan returneras. Skulle nyckeln vi söker inte finnas på $x0 - x4$, avbryts sökningen då $x + 5$ visar sig vara tom. Sökningen blir linjär och därav benåmningen linear probing.
@@ -52,7 +59,6 @@ Söker man nyckeln som ligger på $x + 4$ så börjar man kolla på x, följt av
  Börjar hashtabellen/listan bli fylld innebär det långa kluster som behöver genomsökas, vilket tar tid. Av den anledningen skapar man dubbelt så många platser jämfört med antal nycklar. Då får man en större spridning av elementen och kan spendera kortare tid på sökning.
 
 Den här metoden fungerar bra till en viss gräns. Har man otur med balansen mellan nycklarn [...]
-
 
 
  I värsta fall behöver man söka sig igenom alla nycklar i klustret innan man får hittar det man vill. Samtidigt är det många index i arrayen som gapar tomma. 
@@ -75,5 +81,9 @@ Man låter $x$ genomgå en ny hashning, och låter resultatet bli storleken på 
 Men man kanske vill komma bort från den dubbla hashningen eller den allt mer komplexa strukturen i en växande samling. Då är en idé att låta varje index i arrayen vara en länkad lista. Genomsökningen kommer i värsta fall ta lika lång tid som i det första exemplet, med linear probing(ELLER hur...?), men man slipper göra en dubbelt så stor lista som antalet nycklar. Att låta nycklarna bestå av länkade listor kallas separate chaining. Mer om detta?
 
 
+\subsection*{K'ällor}
+Måste grejas iordning.
+% https://en.wikipedia.org/wiki/Hash_table, 
+% Kursboken
 
 \end{document}
