@@ -51,9 +51,20 @@ public class DHeap<AnyType extends Comparable<? super AnyType>> {
 
 		// Percolate up
 		int hole = ++currentSize;
-		for (array[0] = x; x.compareTo(array[hole / 2]) < 0; hole /= 2)
-			array[hole] = array[hole / 2];
-		array[hole] = x;
+
+		if (hole < 2)
+			array[1] = x;
+		else {
+//			for (array[0] = x; hole > 2 && x.compareTo(array[parentIndex(hole)]) < 0; hole = parentIndex(hole))
+//				array[hole] = array[parentIndex(hole)];
+//			array[hole] = x;
+
+			while (hole > 1 && x.compareTo(array[parentIndex(hole)]) < 0) {
+				array[hole] = array[parentIndex(hole)];
+				hole = parentIndex(hole);
+			}
+			array[hole] = x;
+		}
 	}
 
 	public int firstChildIndex(int node) {
@@ -108,18 +119,35 @@ public class DHeap<AnyType extends Comparable<? super AnyType>> {
 
 		AnyType minItem = findMin();
 		array[1] = array[currentSize--];
-		percolateDown(1);
+
+		// percolate down
+		int currNode = 1;
+		int smallestChild = getSmallestChild(currNode);
+
+		while (smallestChild > 0) {
+			System.out.println("Smallest: "+array[smallestChild]);
+			array[currNode] = array[smallestChild];
+
+			currNode = smallestChild;
+			smallestChild = getSmallestChild(smallestChild);
+		}
 
 		return minItem;
 	}
 
-	/**
-	 * Establish heap order property from an arbitrary
-	 * arrangement of items. Runs in linear time.
-	 */
-	private void buildHeap() {
-		for (int i = currentSize / 2; i > 0; i--)
-			percolateDown(i);
+	private int getSmallestChild(int parent) {
+		int child = firstChildIndex(parent);
+		if (child > size())
+			return -1;
+
+		int smallestChild = (array[child] != null) ? child : -1;
+
+		for(int curr = child + 1; curr < child + dSize - 1; curr++) {
+			if(array[curr] != null && array[smallestChild].compareTo(array[curr]) > 0) {
+				smallestChild = curr;
+			}
+		}
+		return smallestChild;
 	}
 
 	/**
@@ -138,26 +166,12 @@ public class DHeap<AnyType extends Comparable<? super AnyType>> {
 		currentSize = 0;
 	}
 
-	/**
-	 * Internal method to percolate down in the heap.
-	 *
-	 * @param hole the index at which the percolate begins.
-	 */
-	private void percolateDown(int hole) {
-		int child;
-		AnyType tmp = array[hole];
-
-		for (; hole * 2 <= currentSize; hole = child) {
-			child = hole * 2;
-			if (child != currentSize &&
-					array[child + 1].compareTo(array[child]) < 0)
-				child++;
-			if (array[child].compareTo(tmp) < 0)
-				array[hole] = array[child];
-			else
-				break;
+	public String toString() {
+		String ret = "";
+		for (int i = 0; i < array.length; i++) {
+			ret += array[i] + ", ";
 		}
-		array[hole] = tmp;
+		return ret;
 	}
 
 	// Test program
