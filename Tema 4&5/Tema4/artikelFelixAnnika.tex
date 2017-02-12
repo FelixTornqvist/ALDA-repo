@@ -43,9 +43,10 @@ Nu kan arrayen få en storlek som är anpassad till antalet uppskattade objekt s
 Ett enkelt sätt att implementera en hashfunktion är att göra en restdivision på personnumret och arrayens storlek. Den rest vi får fram kan då bli det index objektet ska läggas in på.
 Det vanliga är att man implementerar hashfunktionen i klassen för objekten och inte i hashmapen. Annat vore dumt, en hashmap ska vara generisk.
 
-Men det finns problem med att hashfunktionen i det här fallet är så simpel att  \texttt{index = personnr \%  arrayLength }. Många av personnumrerna kommer tilldelas samma index och på så sätt kollidera med varandra. Det går att få en bättre spridning genom att göra uträkningen mer komplicerad. Ett vanligt sätt är att multiplicera in primtal i nyckeln(personnumret i vårt fall). 
+Men det finns problem med att hashfunktionen i det här fallet är så simpel att  \texttt{index = personnr \%  arrayLength }. Många av personnumrerna kommer tilldelas samma index och på så sätt kollidera med varandra. Det går att få en bättre spridning genom att göra uträkningen mer komplicerad. Ett vanligt sätt är att multiplicera in primtal i nyckeln(personnumret i vårt fall). Man kan göra betydligt mer komplexa varianter för att minimera antalet kollisioner, men det man vinner i säkerhet förlorar man oftast i hastighet. Så komplexiteten har ett pris och man får fråga sig om det är värt det eller inte.
 
 \texttt{Exempel...}
+
 
 
 \section*{Kollisionshantering}
