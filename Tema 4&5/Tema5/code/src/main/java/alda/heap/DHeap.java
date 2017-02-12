@@ -48,17 +48,15 @@ public class DHeap<AnyType extends Comparable<? super AnyType>> {
 	public void insert(AnyType x) {
 		if (currentSize == array.length - 1)
 			enlargeArray(array.length * 2 + 1);
-
 		// Percolate up
 		int hole = ++currentSize;
+		insertAt(hole, x);
+	}
 
+	private void insertAt(int hole, AnyType x) {
 		if (hole < 2)
 			array[1] = x;
 		else {
-//			for (array[0] = x; hole > 2 && x.compareTo(array[parentIndex(hole)]) < 0; hole = parentIndex(hole))
-//				array[hole] = array[parentIndex(hole)];
-//			array[hole] = x;
-
 			while (hole > 1 && x.compareTo(array[parentIndex(hole)]) < 0) {
 				array[hole] = array[parentIndex(hole)];
 				hole = parentIndex(hole);
@@ -118,19 +116,27 @@ public class DHeap<AnyType extends Comparable<? super AnyType>> {
 			throw new UnderflowException();
 
 		AnyType minItem = findMin();
-		array[1] = array[currentSize--];
 
 		// percolate down
 		int currNode = 1;
 		int smallestChild = getSmallestChild(currNode);
+		int hole = currNode;
 
 		while (smallestChild > 0) {
-			System.out.println("Smallest: "+array[smallestChild]);
 			array[currNode] = array[smallestChild];
+			array[smallestChild] = null;
+			hole = smallestChild;
 
 			currNode = smallestChild;
 			smallestChild = getSmallestChild(smallestChild);
 		}
+
+		if (array[size()] != null) {
+			insertAt(hole, array[size()]);
+			array[size()] = null;
+		}
+
+		currentSize--;
 
 		return minItem;
 	}
@@ -141,8 +147,10 @@ public class DHeap<AnyType extends Comparable<? super AnyType>> {
 			return -1;
 
 		int smallestChild = (array[child] != null) ? child : -1;
+		int stop = child + dSize;
+		stop = (stop > size())? size() : stop;
 
-		for(int curr = child + 1; curr < child + dSize - 1; curr++) {
+		for(int curr = child + 1; curr < stop; curr++) {
 			if(array[curr] != null && array[smallestChild].compareTo(array[curr]) > 0) {
 				smallestChild = curr;
 			}
@@ -150,18 +158,10 @@ public class DHeap<AnyType extends Comparable<? super AnyType>> {
 		return smallestChild;
 	}
 
-	/**
-	 * Test if the priority queue is logically empty.
-	 *
-	 * @return true if empty, false otherwise.
-	 */
 	public boolean isEmpty() {
 		return currentSize == 0;
 	}
-
-	/**
-	 * Make the priority queue logically empty.
-	 */
+	
 	public void makeEmpty() {
 		currentSize = 0;
 	}
