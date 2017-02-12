@@ -55,15 +55,6 @@ public class DHeap<AnyType extends Comparable<? super AnyType>> {
 
 	}
 
-	public int size() {
-		return currentSize;
-	}
-
-	public AnyType get(int index) {
-		return array[index];
-	}
-
-
 	private void enlargeArray(int newSize) {
 		AnyType[] old = array;
 		array = (AnyType[]) new Comparable[newSize];
@@ -129,6 +120,14 @@ public class DHeap<AnyType extends Comparable<? super AnyType>> {
 
 	public void makeEmpty() {
 		currentSize = 0;
+	}
+
+	public int size() {
+		return currentSize;
+	}
+
+	AnyType get(int index) {
+		return array[index];
 	}
 
 	public String toString() {
